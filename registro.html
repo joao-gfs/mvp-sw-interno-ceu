@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar - CompartiLAR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-main">
+            <img src="images/logo-compartilar.png" alt="logo CompartiLAR" class="logo">
+            <ul class="nav-list">
+                <li><a href="busca-rep.html">Repúblicas</a></li>
+                <li><a href="">Apartamentos e Kitnets</a></li>
+                <li><a href="busca-pensao.html">Pensões</a></li>
+                <li><a href="busca-colegas.html">Colegas de Quarto</a></li>
+            </ul>
+        </div>
+        <div class="nav-login">
+            <div class="nav-sign-up">Registrar</div>
+            <div class="nav-sign-in">Entrar</div>
+        </div>
+    </nav>
+
+  <main>
+    <section class="section-cards">
+      <h2>Crie sua conta</h2>
+      <form class="registration-form">
+        <!-- Dados Básicos -->
+        <div class="form-section">
+          <h3>Dados Básicos</h3>
+          <label for="nome">Nome Completo:</label>
+          <input type="text" id="nome" name="nome" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" name="senha" required>
+
+          <label for="universidade">Universidade (opcional):</label>
+          <input type="text" id="universidade" name="universidade">
+        </div>
+
+        <!-- Quiz de Hábitos -->
+        <div class="form-section">
+          <h3>Quiz de Compatibilidade</h3>
+
+          <label for="dormir">Que horas você costuma dormir?</label>
+          <select id="dormir" name="dormir" required>
+            <option value="">Selecione</option>
+            <option value="antes22h">Antes das 22h</option>
+            <option value="22-00h">Entre 22h e 00h</option>
+            <option value="depois00h">Depois da meia-noite</option>
+          </select>
+
+          <label for="acordar">Que horas você costuma acordar?</label>
+          <select id="acordar" name="acordar" required>
+            <option value="">Selecione</option>
+            <option value="antes6h">Antes das 6h</option>
+            <option value="6-8h">Entre 6h e 8h</option>
+            <option value="depois8h">Depois das 8h</option>
+          </select>
+
+          <label for="alimentacao">Como é sua alimentação?</label>
+          <select id="alimentacao" name="alimentacao" required>
+            <option value="">Selecione</option>
+            <option value="normal">Normal</option>
+            <option value="vegetariano">Vegetariano</option>
+            <option value="vegano">Vegano</option>
+            <option value="restrito">Restrito (ex: intolerâncias)</option>
+          </select>
+
+          <label for="alcool">Costuma beber álcool?</label>
+          <select id="alcool" name="alcool" required>
+            <option value="">Selecione</option>
+            <option value="nao">Não</option>
+            <option value="ocasionalmente">Ocasionalmente</option>
+            <option value="frequentemente">Frequentemente</option>
+          </select>
+
+          <label for="religiao">Tem alguma religião?</label>
+          <select id="religiao" name="religiao" required>
+            <option value="">Selecione</option>
+            <option value="nao">Não</option>
+            <option value="catolico">Católico</option>
+            <option value="evangelico">Evangélico</option>
+            <option value="espirita">Espírita</option>
+            <option value="outros">Outros</option>
+          </select>
+
+          <label for="personalidade">Como você se define?</label>
+          <select id="personalidade" name="personalidade" required>
+            <option value="">Selecione</option>
+            <option value="introvertido">Introvertido(a)</option>
+            <option value="extrovertido">Extrovertido(a)</option>
+            <option value="equilibrado">Equilibrado(a)</option>
+          </select>
+        </div>
+
+        <!-- Importância de Fatores -->
+        <div class="form-section">
+          <h3>Importância para Você (1 a 5)</h3>
+
+          <label for="comunicacao">Comunicação:</label>
+          <input type="range" id="comunicacao" name="comunicacao" min="1" max="5">
+
+          <label for="limpeza">Limpeza:</label>
+          <input type="range" id="limpeza" name="limpeza" min="1" max="5">
+
+          <label for="organizacao">Organização:</label>
+          <input type="range" id="organizacao" name="organizacao" min="1" max="5">
+        </div>
+
+        <!-- Gostos Pessoais -->
+        <div class="form-section">
+          <h3>Gostos Pessoais</h3>
+
+          <label for="tempo-livre">O que você gosta de fazer no tempo livre?</label>
+          <textarea id="tempo-livre" name="tempo-livre" rows="3"></textarea>
+
+          <label for="musica">Estilos musicais favoritos:</label>
+          <textarea id="musica" name="musica" rows="2"></textarea>
+
+          <label for="filmes">Filmes e séries preferidos:</label>
+          <textarea id="filmes" name="filmes" rows="2"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Finalizar Cadastro</button>
+      </form>
+    </section>
+  </main>
+
+  <style>
+    .registration-form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .form-section {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .form-section h3 {
+      font-family: var(--titulo);
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .registration-form label {
+      font-family: var(--botoes);
+      font-weight: 500;
+      color: #333;
+    }
+
+    .registration-form input,
+    .registration-form select,
+    .registration-form textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: var(--botoes);
+      font-size: 1em;
+    }
+
+    .registration-form input[type="range"] {
+      width: 100%;
+    }
+
+    .btn-submit {
+      padding: 15px;
+      font-size: 1.1em;
+      font-family: var(--botoes);
+      background-color: var(--tom-verde);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--tom-azul);
+    }
+  </style>
+</body>
+</html>

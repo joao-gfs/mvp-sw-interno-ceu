@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Pensão - CompartiLAR</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card-full {
+            display: flex;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            width: 100%;
+        }
+
+        .card-full:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-full img {
+            width: 250px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card-full-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-full-content h3 {
+            font-family: var(--titulo);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-full-content p {
+            font-family: var(--botoes);
+            font-size: 1em;
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .sponsored-tag {
+            font-size: 0.8em;
+            color: var(--tom-azul);
+            background-color: rgba(76, 187, 207, 0.2);
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-family: var(--botoes);
+        }
+
+        .compatibility {
+            font-family: var(--botoes);
+            font-size: 1em;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+        /* Cores dinâmicas de acordo com o nível */
+        .compatibility.high {
+            color: var(--tom-verde);
+        }
+
+        .compatibility.medium {
+            color: #f4a600; /* laranja */
+        }
+
+        .compatibility.low {
+            color: #e63946; /* vermelho */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-main">
+            <img src="images/logo-compartilar.png" alt="logo CompartiLAR" class="logo">
+            <ul class="nav-list">
+                <li><a href="busca-rep.html">Repúblicas</a></li>
+                <li><a href="">Apartamentos e Kitnets</a></li>
+                <li><a href="busca-pensao.html">Pensões</a></li>
+                <li><a href="busca-colegas.html">Colegas de Quarto</a></li>
+            </ul>
+        </div>
+        <div class="nav-login">
+            <div class="nav-sign-up"><a href="registro.html">Registrar</a></div>
+            <div class="nav-sign-in">Entrar</div>
+        </div>
+    </nav>
+
+    <main>
+        <h2 style="font-family: var(--titulo); font-size: 2em; margin: 40px auto 20px; text-align: center;">Resultados de Pensões em Itajubá</h2>
+
+        <div class="card-list">
+
+            <div class="card-full">
+                <img src="images/pensao-madalena.jpg" alt="República Malibu">
+                <div class="card-full-content">
+                    <div>
+                        <span class="sponsored-tag">Patrocinado</span>
+                        <h3>Pensão da Tia Marlene</h3>
+                        <p class="price">R$ 1.600 / mês</p>
+                        <p class="description">Pensão feminina: alimentação, limpeza e quartos individuais.</p>
+                        <p class="distance">350m da universidade</p>
+                        <p class="interested">8 pessoas interessadas</p>
+                        <p class="compatibility high">Compatibilidade: 89%</p> <!-- AQUI -->
+                    </div>
+                </div>
+            </div>            
+
+            <div class="card-full">
+                <img src="images/pensao-masculina.jpg" alt="República Malibu">
+                <div class="card-full-content">
+                    <div>
+                        <h3>República Mukifo</h3>
+                        <p class="price">R$ 729 / mês</p>
+                        <p class="description">República perto de tudo, muita farra e curtição.</p>
+                        <p class="distance">600m da universidade</p>
+                        <p class="interested">15 pessoas interessadas</p>
+                        <p class="compatibility medium">Compatibilidade: 59%</p> <!-- AQUI -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

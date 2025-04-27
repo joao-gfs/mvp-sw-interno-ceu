@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Colega de Quarto - CompartiLAR</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .roommate-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .roommate-card {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+            transition: transform 0.2s;
+        }
+
+        .roommate-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .roommate-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .roommate-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .roommate-info h3 {
+            font-family: var(--titulo);
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .roommate-info p {
+            font-family: var(--botoes);
+            font-size: 0.95em;
+            margin: 2px 0;
+            color: #555;
+        }
+
+        .compatibility {
+            font-family: var(--botoes);
+            font-size: 0.95em;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .compatibility.high {
+            color: var(--tom-verde);
+        }
+
+        .compatibility.medium {
+            color: #f4a600;
+        }
+
+        .compatibility.low {
+            color: #e63946;
+        }
+
+        .locked {
+            filter: blur(5px);
+        }
+
+        .locked-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .locked-info h3 {
+            font-family: var(--titulo);
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .locked-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-premium, .btn-ad {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            font-family: var(--botoes);
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .btn-premium {
+            background-color: var(--tom-verde);
+            color: white;
+        }
+
+        .btn-premium:hover {
+            background-color: #65b344;
+        }
+
+        .btn-ad {
+            background-color: var(--tom-azul);
+            color: white;
+        }
+
+        .btn-ad:hover {
+            background-color: #3996a8;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-main">
+            <img src="images/logo-compartilar.png" alt="logo CompartiLAR" class="logo">
+            <ul class="nav-list">
+                <li><a href="busca-rep.html">Repúblicas</a></li>
+                <li><a href="">Apartamentos e Kitnets</a></li>
+                <li><a href="busca-pensao.html">Pensões</a></li>
+                <li><a href="busca-colegas.html">Colegas de Quarto</a></li>
+            </ul>
+        </div>
+        <div class="nav-login">
+            <div class="nav-sign-up"><a href="registro.html">Registrar</a></div>
+            <div class="nav-sign-in">Entrar</div>
+        </div>
+    </nav>
+
+    <main>
+        <h2 style="font-family: var(--titulo); font-size: 2em; margin: 0 auto 0; text-align: center;">Buscar Colegas de Quarto</h2>
+
+        <div class="roommate-list">
+
+            <!-- Card 1 - Livre -->
+            <div class="roommate-card">
+                <img src="images/user2.jpg" alt="Ana" class="roommate-photo">
+                <div class="roommate-info">
+                    <h3>Ana Silva</h3>
+                    <p>Interesses: Yoga, Séries, Rock Alternativo</p>
+                    <p class="compatibility high">Compatibilidade: 90%</p>
+                </div>
+            </div>
+
+            <!-- Card 2 - Livre -->
+            <div class="roommate-card">
+                <img src="images/user1.jpg" alt="Bruno" class="roommate-photo">
+                <div class="roommate-info">
+                    <h3>Bruno Souza</h3>
+                    <p>Interesses: Academia, Filmes de Ação, Futebol</p>
+                    <p class="compatibility medium">Compatibilidade: 75%</p>
+                </div>
+            </div>
+
+            <!-- Card 3 - Livre -->
+            <div class="roommate-card">
+                <img src="images/user3.jpg" alt="Camila" class="roommate-photo">
+                <div class="roommate-info">
+                    <h3>Camila Rocha</h3>
+                    <p>Interesses: Leitura, Natureza, Pop Music</p>
+                    <p class="compatibility low">Compatibilidade: 42%</p>
+                </div>
+            </div>
+
+            <!-- Card 4 - Bloqueado -->
+            <div class="roommate-card">
+                <img src="images/user2.jpg" alt="Locked" class="roommate-photo locked">
+                <div class="roommate-info locked-info">
+                    <h3>Assine o Premium ou Veja um Anúncio</h3>
+                    <p class="compatibility high">Compatibilidade: 92%</p>
+                    <div class="locked-buttons">
+                        <button class="btn-premium">Assinar Premium</button>
+                        <button class="btn-ad">Assistir Anúncio</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 - Bloqueado -->
+            <div class="roommate-card">
+                <img src="images/user3.jpg" alt="Locked" class="roommate-photo locked">
+                <div class="roommate-info locked-info">
+                    <h3>Assine o Premium ou Veja um Anúncio</h3>
+                    <p class="compatibility high">Compatibilidade: 76%</p>
+                    <div class="locked-buttons">
+                        <button class="btn-premium">Assinar Premium</button>
+                        <button class="btn-ad">Assistir Anúncio</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 - Bloqueado -->
+            <div class="roommate-card">
+                <img src="images/user1.jpg" alt="Locked" class="roommate-photo locked">
+                <div class="roommate-info locked-info">
+                    <h3>Assine o Premium ou Veja um Anúncio</h3>
+                    <p class="compatibility medium">Compatibilidade: 69%</p>
+                    <div class="locked-buttons">
+                        <button class="btn-premium">Assinar Premium</button>
+                        <button class="btn-ad">Assistir Anúncio</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
