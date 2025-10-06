@@ -107,18 +107,18 @@ li:hover {
 
 main {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* antes estava column */
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
     margin-top: 10px;
-}
-
-.search-container {
-    width: 650px; 
+    flex-wrap: wrap; /* para responsividade */
 }
 
 .search-container input {
     width: 100%;
     padding: 15px 20px;
+    margin: 10px auto;
     border: none;
     border-radius: 40px; /* borda bem arredondada */
     font-size: 1.1em;
@@ -127,18 +127,21 @@ main {
 }
 
 .section-cards {
-    margin: 60px auto;
-    padding: 0 20px;
-    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 350px; /* era 1200px */
+    width: 100%;
 }
 
 .section-cards h2 {
     font-family: var(--titulo);
-    font-size: 2em;
+    font-size: 1.6em;
     margin-bottom: 20px;
-    width: 800px;
     color: #333;
+    width: auto; /* remove o width fixo */
+    text-align: center;
 }
+
 
 .card-grid {
     display: grid;
